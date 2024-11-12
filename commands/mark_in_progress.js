@@ -13,6 +13,9 @@ function markInProgress(id) {
         fs.writeFileSync(pathToFile, JSON.stringify(data));
         console.log(`Task with description ${data[id].description} moved from ${oldStatus} to ${data[id].status}`);
     }
+    else {
+        console.log('Please enter a valid task id');
+    }
 }
 
 module.exports = markInProgress;

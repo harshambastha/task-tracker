@@ -5,6 +5,7 @@ const printTask = require('./commands/list');
 const markInProgress = require('./commands/mark_in_progress');
 const markDone = require('./commands/mark_done');
 const deleteTask = require('./commands/delete');
+const updateTask = require('./commands/update');
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -16,6 +17,7 @@ rl.on('line', (input)=>{
     const splitInputArray = input.split(' ');
     const command = splitInputArray[0];
     const argument = splitInputArray[1];
+    const argument1 = splitInputArray[2];
 
     switch(command){
         case 'add':
@@ -24,7 +26,7 @@ rl.on('line', (input)=>{
         case 'list':
             printTask(argument);
             break;
-        case 'mark-in-progress':
+        case 'mark-in-progress':``
             markInProgress(argument);
             break;
         case 'mark-done':
@@ -32,6 +34,9 @@ rl.on('line', (input)=>{
             break;
         case 'delete':
             deleteTask(argument);
+            break;
+        case 'update':
+            updateTask(argument,argument1);
             break;
         default:
             console.log('error');
