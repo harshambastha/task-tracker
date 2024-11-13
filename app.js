@@ -38,8 +38,11 @@ rl.on('line', (input)=>{
         case 'update':
             updateTask(argument,argument1);
             break;
+        case 'exit':
+            console.log('Bye, Have a nice day');
+            rl.close();
+            break;
         default:
-            console.log('error');
+            console.log('Not a valid command');
     }
-    rl.close();
 })

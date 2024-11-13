@@ -24,5 +24,3 @@ function updateTask(taskId, newDescription){
 }
 
 module.exports = updateTask
-
-//update id params to taskId in other commands

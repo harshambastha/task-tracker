@@ -15,7 +15,7 @@ function printTasks(status) {
             printData(getTaskByStatusData);
         }
         else {
-            console.log('Please add relevant status for tasks');
+            console.log('Please enter relevant status for tasks');
         }
     }
     else {

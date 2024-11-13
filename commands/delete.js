@@ -4,13 +4,13 @@ const path = require('path');
 const getFileData = require('../util');
 const pathToFile = path.join(__dirname, '../task-data.json');
 
-function deleteTask(id){
+function deleteTask(taskId){
     const data = getFileData();
     
-    if(data && data[id]){
+    if(data && data[taskId]){
         var oldTask;
         const newData = data.filter(task=>{
-            if(task.id!==(+id)) return true;
+            if(task.id!==(+taskId)) return true;
             else {
                 oldTask = task;
                 return false;
@@ -20,7 +20,7 @@ function deleteTask(id){
         console.log(`Task with description ${oldTask.description} deleted`);
     }
     else {
-        console.log(`Task with ${id} doesn't exist`);
+        console.log(`Task with ${taskId} doesn't exist`);
     }
 
 }

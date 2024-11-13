@@ -4,14 +4,14 @@ const path = require('path');
 const getFileData = require('../util');
 const pathToFile = path.join(__dirname, '../task-data.json');
 
-function markDone(id){
+function markDone(taskId){
     const data = getFileData();
 
-    if(data && data[id]){
-        const oldStatus = data[id].status;
-        data[id].status = 'done';
+    if(data && data[taskId]){
+        const oldStatus = data[taskId].status;
+        data[taskId].status = 'done';
         fs.writeFileSync(pathToFile, JSON.stringify(data));
-        console.log(`Task with description ${data[id].description} moved from ${oldStatus} to ${data[id].status}`);
+        console.log(`Task with description ${data[taskId].description} moved from ${oldStatus} to ${data[taskId].status}`);
     }
 }
 
