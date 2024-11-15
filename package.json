@@ -1,0 +1,14 @@
+{
+  "name": "task-tracker",
+  "version": "1.0.0",
+  "description": "App to track your tasks",
+  "main": "app.js",
+  "bin": {
+    "task-cli": "./app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harsh Ambastha <harshambastha0204@gmail.com>",
+  "license": "MIT"
+}

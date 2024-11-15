@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const addTask = require('./commands/add');
 const printTask = require('./commands/list');
 const markInProgress = require('./commands/mark_in_progress');
