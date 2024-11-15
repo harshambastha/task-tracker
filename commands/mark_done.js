@@ -1,17 +1,24 @@
-const fs = require('fs');
-const path = require('path');
-
-const getFileData = require('../util');
-const pathToFile = path.join(__dirname, '../task-data.json');
+const {getFileData,getTaskData,writeFileData} = require('../util');
 
 function markDone(taskId){
-    const data = getFileData();
 
-    if(data && data[taskId]){
-        const oldStatus = data[taskId].status;
-        data[taskId].status = 'done';
-        fs.writeFileSync(pathToFile, JSON.stringify(data));
-        console.log(`Task with description ${data[taskId].description} moved from ${oldStatus} to ${data[taskId].status}`);
+    if(!taskId || isNaN(taskId)){
+        console.log('Please enter a valid task id');
+        return;
+    }
+
+    const data = getFileData();
+    const taskData = getTaskData(taskId, data);
+
+    if(data && taskData.id){
+        data.forEach(item=>{
+            if(item.id==taskData.id){
+                item.status='done';
+                return;
+            }
+        });
+        writeFileData(data);
+        console.log(`Task with description "${taskData.description}" moved from ${taskData.status} to done`);
     }
 }
 

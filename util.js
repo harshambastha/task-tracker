@@ -10,4 +10,16 @@ function getFileData(){
     }
 }
 
-module.exports = getFileData;
+function getTaskData(taskId, data){
+    return {...data.filter(item=>item.id==taskId)[0]};
+}
+
+function writeFileData(data){
+    fs.writeFileSync(pathToFile, JSON.stringify(data));
+}
+
+module.exports = {
+    getFileData: getFileData,
+    getTaskData: getTaskData,
+    writeFileData: writeFileData
+};
