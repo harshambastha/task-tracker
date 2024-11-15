@@ -21,3 +21,8 @@ task-cli list
 task-cli list done
 task-cli list todo
 task-cli list in-progress
+
+## Steps to run this project - 
+1. Clone the github repository to your machine.
+2. Make sure you have npm and node installed in your machine.
+3. Run task-cli command. It will run the commands.
